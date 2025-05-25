@@ -24,9 +24,7 @@
 Хостинг	GitHub Pages
 
  Структура проєкту
-bash
-Copy
-Edit
+ 
 northern-lights-site/
 ├── index.html          # Основна HTML-сторінка
 ├── style.css           # Стилі сайту
@@ -39,6 +37,7 @@ northern-lights-site/
     ├── family.jpg
     ├── lux.jpg
     └── vip.jpg
+
  Запуск проєкту локально
 Завантаж архів або клонуй репозиторій:
 
