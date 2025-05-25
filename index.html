@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Northern Lights</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#" onclick="showSection('home')">Головна</a></li>
+      <li><a href="#" onclick="showSection('rooms')">Кімнати</a></li>
+      <li><a href="#" onclick="showSection('booking')">Бронювання</a></li>
+      <li><a href="#" onclick="showSection('contact')">Контакти</a></li>
+    </ul>
+  </nav>
+
+  <!-- Головна -->
+<header id="home" class="section">
+  <div class="overlay">
+    <h1>Готель "Northern Lights"</h1>
+    <p>
+      Пориньте у магію Північного сяйва!  
+      Готель "Northern Lights" — це ідеальне місце для відпочинку в будь-яку пору року.  
+      Комфорт, спокій і краса природи об’єднуються тут, щоб подарувати вам незабутні враження.
+    </p>
+  </div>
+</header>
+
+  <!-- Кімнати -->
+  <section id="rooms" class="section hidden">
+    <h2>Наші кімнати</h2>
+    <div class="room-grid">
+      <div class="room-card" onclick="openModal('Стандарт', 'Невеликий, але затишний номер для двох.', 'images/standard.jpg')">
+        <img src="images/standard.jpg" alt="Стандарт" />
+        <h3>Стандарт</h3>
+        <p>1000 грн/ніч</p>
+      </div>
+      <div class="room-card" onclick="openModal('Покращений', 'Комфорт із додатковим простором та видом.', 'images/improved.jpg')">
+        <img src="images/improved.jpg" alt="Покращений" />
+        <h3>Покращений</h3>
+        <p>1300 грн/ніч</p>
+      </div>
+      <div class="room-card" onclick="openModal('Сімейний', 'Просторий номер для всієї родини.', 'images/family.jpg')">
+        <img src="images/family.jpg" alt="Сімейний" />
+        <h3>Сімейний</h3>
+        <p>1600 грн/ніч</p>
+      </div>
+      <div class="room-card" onclick="openModal('Люкс', 'Елегантний номер з ванною, балконом та зоною відпочинку.', 'images/lux.jpg')">
+        <img src="images/lux.jpg" alt="Люкс" />
+        <h3>Люкс</h3>
+        <p>2000 грн/ніч</p>
+      </div>
+      <div class="room-card" onclick="openModal('VIP', 'Найкращий номер з приватною сауною та видом на гори.', 'images/vip.jpg')">
+        <img src="images/vip.jpg" alt="VIP" />
+        <h3>VIP</h3>
+        <p>2500 грн/ніч</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Модальне вікно -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <span onclick="closeModal()" class="close">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <img id="modalImage" src="" alt="" />
+      <p id="modalText"></p>
+    </div>
+  </div>
+
+  <!-- Бронювання -->
+  <section id="booking" class="section hidden">
+    <h2>Форма бронювання</h2>
+    <form onsubmit="return submitBooking(event)">
+      <input type="text" id="firstName" placeholder="Ім’я" required />
+      <input type="text" id="lastName" placeholder="Прізвище" required />
+      <select id="roomType" required>
+        <option value="">Оберіть тип номера</option>
+        <option value="Стандарт">Стандарт</option>
+        <option value="Покращений">Покращений</option>
+        <option value="Сімейний">Сімейний</option>
+        <option value="Люкс">Люкс</option>
+        <option value="VIP">VIP</option>
+      </select>
+      <input type="date" id="checkIn" required />
+      <input type="date" id="checkOut" required />
+      <button type="submit">Забронювати</button>
+    </form>
+    <p id="confirmation"></p>
+  </section>
+
+  <!-- Контакти -->
+  <section id="contact" class="section hidden">
+    <h2>Контакти</h2>
+    <p>📍 вул. Зимова, 12, м. Дніпро</p>
+    <p>📞 +380 99 123 45 67</p>
+    <p>✉️ info@winterslumber.com</p>
+  </section>
+
+  <footer>
+  <p>&copy; 2025 Готель Northern Lights</p>
+</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
