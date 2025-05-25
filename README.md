@@ -27,12 +27,12 @@
  
 northern-lights-site/
 
-├── index.html          # Основна HTML-сторінка
-├── style.css           # Стилі сайту
-├── script.js           # Функціонал і логіка
-├── README.md           # Опис проєкту
-└── images/             # Зображення кімнат і фону
-    
+    ├── index.html          # Основна HTML-сторінка
+    ├── style.css           # Стилі сайту
+    ├── script.js           # Функціонал і логіка
+    ├── README.md           # Опис проєкту
+    └── images/             # Зображення кімнат і фону
+
     ├── header.jpg
     ├── standard.jpg
     ├── improved.jpg
