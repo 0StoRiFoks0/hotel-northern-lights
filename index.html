@@ -71,40 +71,41 @@
   </div>
 
   <!-- Бронювання -->
-  <section id="booking" class="section hidden">
-    <h2>Форма бронювання</h2>
-    <form onsubmit="return submitBooking(event)">
-      <input type="text" id="firstName" placeholder="Ім’я" required />
-      <input type="text" id="lastName" placeholder="Прізвище" required />
-      <select id="roomType" required>
-        <option value="">Оберіть тип номера</option>
-        <option value="Стандарт">Стандарт</option>
-        <option value="Покращений">Покращений</option>
-        <option value="Сімейний">Сімейний</option>
-        <option value="Люкс">Люкс</option>
-        <option value="VIP">VIP</option>
-      </select>
-      <input type="date" id="checkIn" required />
-      <input type="date" id="checkOut" required />
-      <button type="submit">Забронювати</button>
-    </form>
-    <p id="confirmation"></p>
-  </section>
+<section id="booking" class="section hidden">
+  <h2>Форма бронювання</h2>
+  <form onsubmit="return submitBooking(event)">
+    <input type="text" id="firstName" placeholder="Ім’я" required />
+    <input type="text" id="lastName" placeholder="Прізвище" required />
+    <select id="roomType" required>
+      <option value="">Оберіть тип номера</option>
+      <option value="Стандарт">Стандарт</option>
+      <option value="Покращений">Покращений</option>
+      <option value="Сімейний">Сімейний</option>
+      <option value="Люкс">Люкс</option>
+      <option value="VIP">VIP</option>
+    </select>
+    <input type="date" id="checkIn" required />
+    <input type="date" id="checkOut" required />
+    <button type="submit">Забронювати</button>
+  </form>
 
-<h3>Ваші бронювання:</h3>
-<table id="bookingList">
-  <thead>
-    <tr>
-      <th>Ім’я</th>
-      <th>Прізвище</th>
-      <th>Номер</th>
-      <th>Заїзд</th>
-      <th>Виїзд</th>
-      <th>Дії</th>
-    </tr>
-  </thead>
-  <tbody></tbody>
-</table>
+  <p id="confirmation"></p>
+
+  <h3>Ваші бронювання:</h3>
+  <table id="bookingList">
+    <thead>
+      <tr>
+        <th>Ім’я</th>
+        <th>Прізвище</th>
+        <th>Номер</th>
+        <th>Заїзд</th>
+        <th>Виїзд</th>
+        <th>Дії</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</section>
 
   <!-- Контакти -->
   <section id="contact" class="section hidden">
