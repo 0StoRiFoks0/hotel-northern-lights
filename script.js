@@ -4,8 +4,13 @@ function showSection(id) {
   sections.forEach(section => section.classList.add('hidden'));
   document.getElementById(id).classList.remove('hidden');
 
-  // Закриваємо модальне вікно, якщо відкрите
+  // Закриваємо модальне вікно
   document.getElementById('modal').classList.add('hidden');
+
+  // Оновлюємо таблицю лише якщо відкрито "Бронювання"
+  if (id === 'booking') {
+    renderBookings();
+  }
 }
 
 // Відкриття модального вікна з інформацією про номер
@@ -27,7 +32,7 @@ function saveBooking(booking) {
   localStorage.setItem('bookings', JSON.stringify(bookings));
 }
 
-// Відображення всіх бронювань
+// Відображення бронювань у таблиці
 function renderBookings() {
   const bookings = JSON.parse(localStorage.getItem('bookings')) || [];
   const tbody = document.querySelector('#bookingList tbody');
@@ -74,11 +79,11 @@ function editBooking(index) {
   // Видаляємо старий запис (оновиться після сабміту)
   deleteBooking(index);
 
-  // Показуємо секцію з формою
+  // Перехід до секції з формою
   showSection('booking');
 }
 
-// Надсилання форми бронювання
+// Надсилання форми
 function submitBooking(event) {
   event.preventDefault();
 
@@ -90,7 +95,6 @@ function submitBooking(event) {
     checkOut: document.getElementById('checkOut').value
   };
 
-  // Валідація (мінімальна)
   if (!booking.firstName || !booking.lastName || !booking.room || !booking.checkIn || !booking.checkOut) {
     alert("Будь ласка, заповніть усі поля.");
     return;
@@ -103,8 +107,7 @@ function submitBooking(event) {
     `Бронювання підтверджено для ${booking.firstName} ${booking.lastName} у номері "${booking.room}" з ${booking.checkIn} по ${booking.checkOut}.`;
 }
 
-// Завантаження бронювань при відкритті сторінки
+// Початкове завантаження — лише головна сторінка
 window.onload = function () {
-  renderBookings();
   showSection('home');
 };
